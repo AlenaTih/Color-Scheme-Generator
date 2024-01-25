@@ -1,0 +1,33 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Smythe', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Typography and icons */
+
+
+.container {
+    width: 100%;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    padding: 2.5rem;
+}
+
+/* Layout */
+
+/* Buttons */
+
+/* Images */
+
+/* Links */
+
+/* Media queries */
+
+/* @media(width >= 600px) */
+@media(min-width: 600px) {
+
+}
