@@ -18,7 +18,37 @@
     </head>
     <body>
         <div class="container">
-            <h1>index.html</h1>
+            <h1>Color Scheme Generator</h1>
+            <div class="dashboard" id="dashboard">
+                <!-- <form id="form"> -->
+                    <input type="color" id="input-color" name="input-color" value="#ff0000">
+                    <!-- <label for="color-mode">Choose a color mode</label> -->
+                    <select name="color-mode" id="color-mode">
+                        <option value="monochrome">Monochrome</option>
+                        <option value="monochrome-dark">Monochrome-dark</option>
+                        <option value="monochrome-light">Monochrome-light</option>
+                        <option value="analogic">Analogic</option>
+                        <option value="complement">Complement</option>
+                        <option value="analogic-complement">Analogic-complement</option>
+                        <option value="triad">Triad</option>
+                        <option value="quad">Guad</option>
+                    </select>
+                    <button class="get-scheme-button" id="get-scheme-button">
+                        Get color scheme
+                    </button>
+                <!-- </form> -->
+            </div>
+
+            <div class="colors" id="colors">
+                <!-- Colors of a color scheme are here -->
+                <div class="color-view" id="color-view">
+
+                </div>
+                <div class="color-hex" id="color-hex">
+
+                </div>
+            </div>
+               
         </div>
 
         <script src="index.js" type="module"></script>
