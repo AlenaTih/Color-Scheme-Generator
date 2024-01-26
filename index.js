@@ -11,6 +11,17 @@ const getSchemeButton = document.getElementById("get-scheme-button")
 const colors = document.getElementById("colors")
 const colorView = document.getElementById("color-view")
 const colorHex = document.getElementById("color-hex")
+const colorValue = document.getElementById("color-value")
+
+const snackEl = document.getElementById("snackbar")
+
+document.addEventListener("click", function(e) {
+    if(e.target.dataset.image) {
+        copyToClipboard(e.target.dataset.image)
+    } else if(e.target.dataset.hex) {
+        copyToClipboard(e.target.dataset.hex)
+    }
+})
 
 inputColor.addEventListener("change", function(e) {
     const color = e.target.value
@@ -28,11 +39,11 @@ getSchemeButton.addEventListener("click", function(e) {
         .then(response => response.json())
         .then(data => {
             console.log(data)
-            renderColor(data.colors)
+            renderColors(data.colors)
         } )
 })
 
-function renderColor(colorScheme) {
+function renderColors(colorScheme) {
     console.log(colorScheme)
     
     for (let color of colorScheme) {
@@ -42,11 +53,29 @@ function renderColor(colorScheme) {
         //     <img src="#" class="color-image">`
 
         colorView.innerHTML +=`
-            <p class="color-image" style="background: ${color.hex.value}">Color</p>`
+            <p class="color-image"
+                data-image="${color.hex.value}"
+                style="background: ${color.hex.value}">
+            </p>`
         
         colorHex.innerHTML += `
-            <p>${color.hex.value}</p>`
+            <p data-hex="${color.hex.value}">${color.hex.value}</p>`
 
         // document.querySelector(".color-image").style.background = `${color.hex.value}`
     }
 }
+
+function copyToClipboard(value) {
+    navigator.clipboard.writeText(value).then( function() {
+        console.log("Copied to clipboard!")
+        showSnackbar(value)
+    })
+  }
+
+function showSnackbar(value) {
+    snackEl.className = "show"
+    setTimeout( function() {
+        snackEl.className = snackEl.className.replace("show", "")
+    }, 3000)
+    colorValue.textContent = value
+  }
