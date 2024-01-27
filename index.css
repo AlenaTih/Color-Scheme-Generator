@@ -12,10 +12,23 @@ html, body {
 
 /* Typography and icons */
 
-.color-view p {
+.title {
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+.input-color,
+.color-mode,
+.mode-option,
+.get-scheme-button {
+    font-size: 1.125rem;
+}
+
+
+/* .color-view span {
     height: 200px;
     width: 40px;
-}
+} */
 
 /* Layout */
 
@@ -26,22 +39,25 @@ html, body {
     align-items: center;
     justify-content: center;
     width: 100%;
+    /* min-width: 550px; */
     overflow-x: hidden; /* Prevents horizontal scrolling */
     margin: 0 auto;
-    padding: 2.5rem;
-    gap: 2rem;
+    padding: 2rem;
+    /* gap: 2rem; */
 }
 
 .dashboard {
     display: flex;
+    align-items: center;
     gap: 1.125rem;
+    margin: 2rem 0 2.5rem 0;
 }
 
 .input-color {
     cursor: pointer;
 }
 
-select {
+.color-mode {
     color: whitesmoke;
     background-color: #1F2937;
     border-radius: 6px;
@@ -55,7 +71,10 @@ select {
 .colors {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    align-items: center;
+    /* gap: 0.75rem; */
+    /* width: 100%; */
+    margin: 0 auto;
 }
 
 .color-view,
@@ -65,19 +84,26 @@ select {
 
 .color-view {
     display: flex;
-    gap: 2rem;
+    justify-content: center;
+    gap: 1.125rem;
     height: 200px;
+    width: 100%;
+    /* width: 550px; */
+    margin-bottom: 0;
 }
 
 .color-image {
-    width: 40px;
+    /* width: 60px; */
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 .color-hex {
     display: flex;
-    /* gap: 1rem; */
     justify-content: space-between;
-    padding: 0 1rem;
+    padding: 0 0.75rem;
+    margin-top: 0;
 }
 
 /* Buttons */
@@ -95,26 +121,26 @@ select {
 
 /* Links */
 
-/* The snackbar - position it at the bottom and in the middle of the screen */
+/* The snackbar at the bottom and in the middle of the screen */
 #snackbar {
-    visibility: hidden; /* Hidden by default. Visible on click */
-    min-width: 250px; /* Set a default minimum width */
+    visibility: hidden; /* Hidden by default. Visible on action */
+    min-width: 250px;
     margin-left: -125px; /* Divide value of min-width by 2 */
-    background-color: whitesmoke; /* Light background color */
-    color: #1F2937; /* Black text color */
-    text-align: center; /* Centered text */
-    border-radius: 6px; /* Rounded borders */
-    padding: 1rem; /* Padding */
-    position: fixed; /* Sit on top of the screen */
-    z-index: 1; /* Add a z-index if needed */
+    background-color: whitesmoke;
+    color: #1F2937;
+    text-align: center;
+    border-radius: 6px;
+    padding: 1rem;
+    position: fixed;
+    z-index: 1;
     left: 50%; /* Center the snackbar */
     bottom: 30px; /* 30px from the bottom */
   }
   
   /* Show the snackbar when clicking on a button (class added with JavaScript) */
   #snackbar.show {
-    visibility: visible; /* Show the snackbar */
-    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    visibility: visible;
+    /* 0.5 seconds to fade in and out the snackbar.
     However, delay the fade out process for 2.5 seconds */
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
@@ -143,23 +169,55 @@ select {
 
 /* Media queries */
 
-/* @media(width >= 600px) */
-@media(min-width: 600px) {
+/* @media (width <= 599px) */
+@media (max-width: 599px) {
+    .colors {
+        width: 100%;
+    }
+
+    .color-hex {
+        width: 100%;
+        gap: 1rem;
+    }
+}
+
+/* @media (width >= 600px) */
+@media (min-width: 600px) {
     /* Typography */
 
-    .color-view p {
+    .title {
+        font-size: 3rem;
+    }
+
+    .input-color,
+    .color-mode,
+    .mode-option,
+    .get-scheme-button {
+        font-size: 1.5rem;
+}
+
+    /* .color-view span {
         height: 400px;
         width: 100px;
-    }
+    } */
 
     /* Layout */
 
-    .colors {
-        gap: 2rem;
+    .container {
+        padding: 2.5rem;
     }
+
+    /* .colors {
+        gap: 2rem;
+    } */
 
     .color-view {
         height: 400px;
+    }
+
+    .color-hex {
+        width: 100%;
+        padding: 0 1rem;
     }
     
     .color-image {

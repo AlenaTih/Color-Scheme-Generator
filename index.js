@@ -53,10 +53,10 @@ function renderColors(colorScheme) {
         //     <img src="#" class="color-image">`
 
         colorView.innerHTML +=`
-            <p class="color-image"
+            <span class="color-image"
                 data-image="${color.hex.value}"
                 style="background: ${color.hex.value}">
-            </p>`
+            </span>`
         
         colorHex.innerHTML += `
             <p data-hex="${color.hex.value}">${color.hex.value}</p>`

@@ -1,4 +1,61 @@
-# co73343ea8c93c5d396d7ac67
+# Color Scheme Generator
+
+## Overview
+
+This project is a simple color scheme generator built with JavaScript. It allows users to input a base color, choose a color mode, and generate a color scheme using thecolorapi.com API. The generated color scheme is displayed with corresponding hex values, and users can easily copy colors to their clipboard.
+
+## Features
+
+- Input a base color through a color picker.
+- Choose a color mode for the generated scheme.
+- Click on colors to copy hex values to the clipboard.
+- Responsive design for easy use on various devices.
+
+## Usage
+
+1. Open `index.html` in a web browser.
+2. Choose a base color using the color picker.
+3. Select a color mode from the dropdown.
+4. Click the "Get Scheme" button to generate the color scheme.
+5. Copy colors by clicking on them or their hex values.
+
+## Dependencies
+
+- No external libraries are used in this project.
+
+## API Integration
+
+This project leverages thecolorapi.com to fetch color schemes based on the user's input.
+
+## Contributing
+
+Feel free to contribute to the project by submitting bug reports, feature requests, or pull requests. Your input is highly valued!
+
+## Technologies used
+
+- HTML
+- CSS
+- JavaScript
+- The Color API
+
+## Contributors
+
+- Alena Tikhomirova
+
+## Contribution
+
+If you have ideas to enhance this project or encounter any issues, feel free to contribute by opening an issue or submitting a pull request.
+
+## Contact
+For inquiries or feedback, please contact me at alyonatihomirova9@gmail.com.
+
+## Acknowledgments
+
+This is a project I built in [Scrimba's](https://scrimba.com/) Frontend Development course. Scrimba is awesome!
+
+
+Let's connect, code, and have fun over virtual coffee! ☕️
+
 
 Quick start:
 
@@ -8,14 +65,3 @@ $ npm start
 ````
 
 Head over to https://vitejs.dev/ to learn more about using vite
-## About Scrimba
-
-At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
-If we succeed with this, it will give anyone who wants to become a software developer a realistic shot at succeeding, regardless of where they live and the size of their wallets 🎉
-The Frontend Developer Career Path aims to teach you everything you need to become a Junior Developer, or you could take a deep-dive with one of our advanced courses 🚀
-
-- [Our courses](https://scrimba.com/allcourses)
-- [The Frontend Career Path](https://scrimba.com/learn/frontend)
-- [Become a Scrimba Pro member](https://scrimba.com/pricing)
-
-Happy Coding!

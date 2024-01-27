@@ -18,7 +18,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>Color Scheme Generator</h1>
+            <h1 class="title">Color Scheme Generator</h1>
             <div class="dashboard" id="dashboard">
                 <!-- <form id="form"> -->
                     <input type="color"
@@ -27,7 +27,7 @@
                         name="input-color"
                         value="#323AFF">
                     <!-- <label for="color-mode">Choose a color mode</label> -->
-                    <select name="color-mode" id="color-mode">
+                    <select name="color-mode" class="color-mode" id="color-mode">
                         <option class="mode-option" value="monochrome">Monochrome</option>
                         <option class="mode-option" value="monochrome-dark">Monochrome-dark</option>
                         <option class="mode-option" value="monochrome-light">Monochrome-light</option>
@@ -45,12 +45,8 @@
 
             <div class="colors" id="colors">
                 <!-- Colors of a color scheme are here -->
-                <div class="color-view" id="color-view">
-
-                </div>
-                <div class="color-hex" id="color-hex">
-
-                </div>
+                <div class="color-view" id="color-view"></div>
+                <div class="color-hex" id="color-hex"></div>
             </div>
                
             <div id="snackbar">Copied <span id="color-value"></span> to clipboard!</div>
