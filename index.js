@@ -1,4 +1,4 @@
-const form = document.getElementById("form")
+// const form = document.getElementById("form")
 
 const inputColor = document.getElementById("input-color")
 let seedColor = ""
@@ -8,7 +8,7 @@ const colorMode = modeInput.value
 
 const getSchemeButton = document.getElementById("get-scheme-button")
 
-const colors = document.getElementById("colors")
+// const colors = document.getElementById("colors")
 const colorView = document.getElementById("color-view")
 const colorHex = document.getElementById("color-hex")
 const colorValue = document.getElementById("color-value")
