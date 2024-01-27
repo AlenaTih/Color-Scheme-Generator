@@ -26,28 +26,22 @@ document.addEventListener("click", function(e) {
 inputColor.addEventListener("change", function(e) {
     const color = e.target.value
     seedColor = color.slice(1)
-    console.log(seedColor)
 })
 
 function fetchColors() {
     const modeInput = document.getElementById("color-mode")
     const colorMode = modeInput.value
 
-    console.log(seedColor)
-    console.log(colorMode)
-
     if (seedColor & colorMode) {
         fetch(`https://www.thecolorapi.com/scheme?hex=${seedColor}&mode=${colorMode}`)
         .then(response => response.json())
         .then(data => {
-            console.log(data)
             renderColors(data.colors)
         })
     } else if (seedColor) {
         fetch(`https://www.thecolorapi.com/scheme?hex=${seedColor}`)
         .then(response => response.json())
         .then(data => {
-            console.log(data)
             renderColors(data.colors)
         })
     } else {
@@ -58,13 +52,11 @@ function fetchColors() {
 }
 
 function renderColors(colorScheme) {
-    console.log(colorScheme)
 
     colorView.innerHTML = ""
     colorHex.innerHTML = ""
     
     for (let color of colorScheme) {
-        console.log(color.hex.value)
 
         colorView.innerHTML +=`
             <span class="color-image"
@@ -80,7 +72,6 @@ function renderColors(colorScheme) {
 
 function copyToClipboard(value) {
     navigator.clipboard.writeText(value).then( function() {
-        console.log("Copied to clipboard!")
         showSnackbar(value)
     })
   }
