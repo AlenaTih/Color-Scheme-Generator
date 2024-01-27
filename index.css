@@ -112,6 +112,13 @@ html, body {
     border: none;
     border-radius: 6px;
     cursor: pointer;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.50);
+}
+
+.get-scheme-button:hover,
+.get-scheme-button:focus,
+.get-scheme-button:active {
+    background-color: #345D9B;
 }
 
 /* Images */
