@@ -14,7 +14,7 @@ html, body {
 
 .title {
     font-size: 2rem;
-    margin-bottom: 0;
+    margin: 0;
 }
 
 .input-color,
@@ -49,6 +49,8 @@ html, body {
 .dashboard {
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 100%;
     gap: 1.125rem;
     margin: 2rem 0 2.5rem 0;
 }
@@ -62,10 +64,16 @@ html, body {
     background-color: #1F2937;
     border-radius: 6px;
     padding: 0.5rem 1rem;
+    cursor: pointer;
 }
+
+/* .color-mode option {
+    cursor: pointer;
+} */
 
 .mode-option {
     margin: 0.5rem 0;
+    cursor: pointer;
 }
 
 .colors {
@@ -204,7 +212,7 @@ html, body {
     /* Layout */
 
     .container {
-        padding: 2.5rem;
+        padding: 4rem;
     }
 
     /* .colors {
