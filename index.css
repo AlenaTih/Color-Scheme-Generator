@@ -42,7 +42,7 @@ html, body {
     /* min-width: 550px; */
     overflow-x: hidden; /* Prevents horizontal scrolling */
     margin: 0 auto;
-    padding: 2.5rem;
+    padding: 4rem 2.5rem 0;
     /* gap: 2rem; */
 }
 
