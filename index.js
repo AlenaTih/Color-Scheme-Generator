@@ -3,12 +3,9 @@
 const inputColor = document.getElementById("input-color")
 let seedColor = ""
 
-const modeInput = document.getElementById("color-mode")
-const colorMode = modeInput.value
-
 const getSchemeButton = document.getElementById("get-scheme-button")
 
-// const colors = document.getElementById("colors")
+const colors = document.getElementById("colors")
 const colorView = document.getElementById("color-view")
 const colorHex = document.getElementById("color-hex")
 const colorValue = document.getElementById("color-value")
@@ -16,10 +13,13 @@ const colorValue = document.getElementById("color-value")
 const snackEl = document.getElementById("snackbar")
 
 document.addEventListener("click", function(e) {
-    if(e.target.dataset.image) {
+    if (e.target.dataset.image) {
         copyToClipboard(e.target.dataset.image)
-    } else if(e.target.dataset.hex) {
+    } else if (e.target.dataset.hex) {
         copyToClipboard(e.target.dataset.hex)
+    } else if (e.target.id === "get-scheme-button") {
+        e.preventDefault()
+        fetchColors()
     }
 })
 
@@ -29,28 +29,42 @@ inputColor.addEventListener("change", function(e) {
     console.log(seedColor)
 })
 
-getSchemeButton.addEventListener("click", function(e) {
-    e.preventDefault
+function fetchColors() {
+    const modeInput = document.getElementById("color-mode")
+    const colorMode = modeInput.value
 
     console.log(seedColor)
     console.log(colorMode)
 
-    fetch(`https://www.thecolorapi.com/scheme?hex=${seedColor}&mode=${colorMode}`)
+    if (seedColor & colorMode) {
+        fetch(`https://www.thecolorapi.com/scheme?hex=${seedColor}&mode=${colorMode}`)
         .then(response => response.json())
         .then(data => {
             console.log(data)
             renderColors(data.colors)
-        } )
-})
+        })
+    } else if (seedColor) {
+        fetch(`https://www.thecolorapi.com/scheme?hex=${seedColor}`)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            renderColors(data.colors)
+        })
+    } else {
+        alert("Please select a base color and a color mode ❤️")
+    }
+
+    // form.reset()
+}
 
 function renderColors(colorScheme) {
     console.log(colorScheme)
+
+    colorView.innerHTML = ""
+    colorHex.innerHTML = ""
     
     for (let color of colorScheme) {
         console.log(color.hex.value)
-
-        // colorView.innerHTML +=`
-        //     <img src="#" class="color-image">`
 
         colorView.innerHTML +=`
             <span class="color-image"
@@ -61,7 +75,6 @@ function renderColors(colorScheme) {
         colorHex.innerHTML += `
             <p data-hex="${color.hex.value}">${color.hex.value}</p>`
 
-        // document.querySelector(".color-image").style.background = `${color.hex.value}`
     }
 }
 
