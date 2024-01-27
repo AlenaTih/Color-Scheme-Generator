@@ -24,18 +24,11 @@ html, body {
     font-size: 1.125rem;
 }
 
-
-/* .color-view span {
-    height: 200px;
-    width: 40px;
-} */
-
 /* Layout */
 
 .container {
     display: flex;
     flex-direction: column;
-    /* background-color: #1F2937; */
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -43,7 +36,6 @@ html, body {
     overflow-x: hidden; /* Prevents horizontal scrolling */
     margin: 0 auto;
     padding: 4rem 2.5rem 0;
-    /* gap: 2rem; */
 }
 
 .dashboard {
@@ -57,6 +49,7 @@ html, body {
 
 .input-color {
     cursor: pointer;
+    padding: 0;
 }
 
 .color-mode {
@@ -66,10 +59,6 @@ html, body {
     padding: 0.5rem 1rem;
     cursor: pointer;
 }
-
-/* .color-mode option {
-    cursor: pointer;
-} */
 
 .mode-option {
     margin: 0.5rem 0;
@@ -208,20 +197,11 @@ html, body {
         font-size: 1.5rem;
 }
 
-    /* .color-view span {
-        height: 400px;
-        width: 100px;
-    } */
-
     /* Layout */
 
     .container {
         padding: 4rem;
     }
-
-    /* .colors {
-        gap: 2rem;
-    } */
 
     .color-view {
         height: 400px;
