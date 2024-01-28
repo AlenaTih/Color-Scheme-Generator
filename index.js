@@ -57,18 +57,20 @@ function renderColors(colorScheme) {
     colorHex.innerHTML = ""
     
     for (let color of colorScheme) {
+        const hexValue = color.hex.value
 
         colorView.innerHTML +=`
             <span class="color-image"
-                data-image="${color.hex.value}"
-                style="background: ${color.hex.value}">
+                data-image="${hexValue}"
+                style="background: ${hexValue}">
             </span>`
         
         colorHex.innerHTML += `
-            <p data-hex="${color.hex.value}">${color.hex.value}</p>`
+            <p data-hex="${hexValue}">${hexValue}</p>`
 
     }
 }
+
 
 function copyToClipboard(value) {
     navigator.clipboard.writeText(value).then( function() {
