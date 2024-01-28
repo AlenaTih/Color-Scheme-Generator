@@ -32,16 +32,18 @@ function fetchColors() {
     const modeInput = document.getElementById("color-mode")
     const colorMode = modeInput.value
 
-    if (seedColor & colorMode) {
+    if (seedColor && colorMode) {
         fetch(`https://www.thecolorapi.com/scheme?hex=${seedColor}&mode=${colorMode}`)
         .then(response => response.json())
         .then(data => {
+            console.log(data)
             renderColors(data.colors)
         })
     } else if (seedColor) {
         fetch(`https://www.thecolorapi.com/scheme?hex=${seedColor}`)
         .then(response => response.json())
         .then(data => {
+            console.log(data)
             renderColors(data.colors)
         })
     } else {
@@ -52,7 +54,6 @@ function fetchColors() {
 }
 
 function renderColors(colorScheme) {
-
     colorView.innerHTML = ""
     colorHex.innerHTML = ""
     
