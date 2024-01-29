@@ -36,14 +36,12 @@ function fetchColors() {
         fetch(`https://www.thecolorapi.com/scheme?hex=${seedColor}&mode=${colorMode}`)
         .then(response => response.json())
         .then(data => {
-            console.log(data)
             renderColors(data.colors)
         })
     } else if (seedColor) {
         fetch(`https://www.thecolorapi.com/scheme?hex=${seedColor}`)
         .then(response => response.json())
         .then(data => {
-            console.log(data)
             renderColors(data.colors)
         })
     } else {
